@@ -114,17 +114,23 @@
     }
 
     .hero {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      background: url('banner.png') no-repeat center center;
-      background-size: cover;
-      padding-top: 100px; /* Evita que o topo do banner fique escondido pelo header */
-    }
+  background: url('banner.png') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background: url('banner responsivo.png') no-repeat center center;
+    background-size: cover;
+  }
+}
 
     .hero-content h1 {
       font-size: 3rem;
