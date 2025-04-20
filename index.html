@@ -5,183 +5,284 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Clínica MS</title>
     <style>
-      /* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-/* Layout base */
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #fff;
-  color: #333;
-  line-height: 1.6;
-}
+      body {
+        font-family: Arial, sans-serif;
+      }
 
-/* Banner principal */
-.banner {
-  background-image: url('banner.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+        background-color: transparent;
+        box-shadow: none;
+        transition: background-color 0,3s ease, box-shadow 0.3s ease;
+      }
 
-.banner h1 {
-  font-size: 3rem;
-  color: #fff;
-  margin-bottom: 20px;
-}
+      header.scrolled {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
 
-.banner p {
-  font-size: 1.2rem;
-  color: #f5f5f5;
-  margin-bottom: 30px;
-}
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: transparent;
+      }
+      .logo {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
 
-.banner .btn {
-  padding: 12px 25px;
-  background-color: #0c4a6e;
-  color: #fff;
-  border: none;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
+      .logo img {
+        height: 80px;
+      }
 
-.banner .btn:hover {
-  background-color: #075985;
-}
+      .btn-agendar {
+        position: absolute;
+        top: 20px;
+        left: 50px;
+        background-color: #f26522;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+      }
 
-/* Sessões */
-section {
-  padding: 60px 40px;
-  max-width: 1200px;
-  margin: auto;
-}
+      .nav-links {
+        position: absolute;
+        top: 30px;
+        right: 100px;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
+      .nav-links a,
+      .dropdown > a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        
+      }
 
-p {
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto 20px auto;
-  text-align: center;
-}
+      header.scrolled .nav-links a,
+      header.scrolled .dropdown > a {
+        color: black;
+      }
 
-/* Cards de serviços */
-.servicos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
+      .dropdown {
+        position: relative;
+      }
 
-.card {
-  background: #f9f9f9;
-  border-radius: 20px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        z-index: 10;
+      }
 
-.card:hover {
-  transform: translateY(-5px);
-}
+      .dropdown-content a {
+        padding: 10px 15px;
+        color: white;
+        text-decoration: none;
+        display: block;
+      }
 
-.card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-}
+      .dropdown-content a:hover {
+        background-color: #333;
+      }
 
-.card p {
-  font-size: 1rem;
-}
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
 
-/* Rodapé */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  background-color: #f3f3f3;
-}
+      .hero {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        background: url('banner.png') no-repeat center center;
+        background-size: cover;
+        padding-top: 100px; /* Evita que o topo do banner fique escondido pelo header */
+      }
 
-/* -------------------------------
-   RESPONSIVIDADE
---------------------------------*/
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
 
-@media (max-width: 768px) {
-  .banner {
-    height: 100vh;
-    padding: 30px 20px;
-  }
+      .btn-primary {
+        background: #ff5e00;
+        color: #fff;
+        padding: 15px 130px;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: 0.3s;
+        text-decoration: none;
+        display: inline-block;
+        position: absolute;
+        bottom: 90px;
+        right: 625px;
+        text-align: center;
+      }
 
-  .banner h1 {
-    font-size: 2rem;
-  }
+      .btn-saiba {
+        background: #ff7a00;
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: 0.3s;
+        text-decoration: none;
+        display: inline-block;
+      }
 
-  .banner p {
-    font-size: 1rem;
-  }
+      .btn-primary:hover,
+      .btn-saiba:hover {
+        background: #e66a00;
+      }
 
-  .banner .btn {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
+      section.sobre, section.tratamentos {
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
 
-  section {
-    padding: 40px 20px;
-  }
+      .titulo-quem-somos {
+        text-align: center;
+        margin-top: 60px;
+      }
 
-  h2 {
-    font-size: 1.6rem;
-  }
+      .titulo-quem-somos h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
 
-  p {
-    font-size: 1rem;
-  }
+      .sublinhado {
+        text-decoration: underline;
+        text-decoration-color: #f26522;
+        text-underline-offset: 6px;
+      }
 
-  .card h3 {
-    font-size: 1.2rem;
-  }
+      .secao-quem-somos {
+        padding: 100px 20px 60px;
+        margin: 100px auto 0;
+        background-color: #1f1f1f;
+        color: white;
+        width: 100%;
+      }
 
-  .card p {
-    font-size: 0.95rem;
-  }
-}
+      .secao-quem-somos h2 {
+        color: white;
+      }
 
-@media (max-width: 480px) {
-  .banner h1 {
-    font-size: 1.7rem;
-  }
+      .secao-quem-somos p {
+        color: #dcb208;
+      }
 
-  .banner p {
-    font-size: 0.9rem;
-  }
+      .conteudo-sobre {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
 
-  .banner .btn {
-    font-size: 0.9rem;
-    padding: 8px 18px;
-  }
+      .imagem-sobre {
+        max-width: 500px;
+        width: 100%;
+        border-radius: 20px;
+      }
 
-  section {
-    padding: 30px 15px;
-  }
-}
+      .texto-sobre {
+        flex: 1;
+        max-width: 600px;
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
 
+      .tratamentos-lista {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+    .tratamento-item {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 250px;
+        text-align: center;
+      }
+
+      .tratamento-item img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      footer {
+        background: #111;
+        color: #fff;
+        padding: 40px 20px;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+      }
+
+      @media (max-width: 768px) {
+        .botao-extra-banner {
+          position: static;
+          margin-top: 20px;
+          text-align: center;
+        }
+
+        .conteudo-sobre {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .imagem-sobre {
+          max-width: 100%;
+        }
+
+        .texto-sobre {
+          max-width: 100%;
+          padding: 0 10px;
+        }
+
+        .titulo-quem-somos h2 {
+          font-size: 2rem;
+        }
+      }
     </style>
   </head>
   <body>
