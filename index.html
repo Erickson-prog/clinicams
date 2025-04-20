@@ -69,6 +69,7 @@
       display: flex;
     }
   }
+
     body {
       font-family: Arial, sans-serif;
     }
@@ -494,27 +495,11 @@ box-sizing: border-box;
     </div>
   </footer>
   <script>
-    <!-- Botão Hamburguer -->
-<div class="menu-hamburguer" onclick="toggleMenu()">
-☰
-</div>
-
-<!-- Menu -->
-<nav id="menu">
-<a href="#tratamentos">Tratamentos</a>
-<a href="#sobre">Sobre</a>
-<a href="#contato">Contato</a>
-</nav>
-
-<!-- JavaScript para ativar/desativar o menu -->
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-  }
-</script>
-
-
-</script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+  
 </body>
 </html>
