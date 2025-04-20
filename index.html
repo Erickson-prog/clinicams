@@ -22,7 +22,7 @@
         z-index: 9999;
         background-color: transparent;
         box-shadow: none;
-        transition: background-color 0,3s ease, box-shadow 0.3s ease;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
       }
 
       header.scrolled {
@@ -140,12 +140,18 @@
         transition: 0.3s;
         text-decoration: none;
         display: inline-block;
-        position: absolute;
-        bottom: 90px;
-        right: 625px;
+        position: static;
+        margin-top: 40px;
+        padding: 15px 50px;
         text-align: center;
       }
-
+      @media (min-width: 1024px) {
+      .btn-primary {
+       position: absolute;
+        bottom: 90px;
+        right: 625px;
+  }
+}
       .btn-saiba {
         background: #ff7a00;
         color: #fff;
