@@ -310,10 +310,92 @@ box-sizing: border-box;
   }
 }
 </style>
+
+<style>
+/* MOBILE ONLY */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: #111;
+    padding: 10px 0;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 10000;
+  }
+
+  .nav-links.ativo {
+    display: flex;
+  }
+
+  .menu-hamburguer {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    z-index: 10001;
+  }
+
+  .dropdown-content {
+    position: static;
+    background: #222;
+    width: 100%;
+  }
+
+  .dropdown-content a {
+    padding-left: 20px;
+    border-top: 1px solid #333;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .btn-agendar {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-hamburguer {
+    display: none;
+  }
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btnMenu = document.querySelector('.menu-hamburguer');
+  const menu = document.querySelector('.nav-links');
+  const dropdownBtns = document.querySelectorAll('.dropdown > a');
+
+  if (btnMenu) {
+    btnMenu.addEventListener('click', () => {
+      menu.classList.toggle('ativo');
+    });
+  }
+
+  dropdownBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const dropdown = btn.parentElement;
+      dropdown.classList.toggle('open');
+    });
+  });
+});
+</script>
+
 </head>
 <body>
   <div class="hero">
     <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="btn-primary">ENTRE EM CONTATO</a>
+      <div class="menu-hamburguer">☰</div>
       <div class="logo">
         <img src="logo5-removebg-preview.png" alt="Logo Clínica MS">
       </div>
@@ -398,26 +480,7 @@ box-sizing: border-box;
       </div>
     </div>
   </footer>
-  <script>
-    <!-- Botão Hamburguer -->
-<div class="menu-hamburguer" onclick="toggleMenu()">
-☰
-</div>
-
-<!-- Menu -->
-<nav id="menu">
-<a href="#tratamentos">Tratamentos</a>
-<a href="#sobre">Sobre</a>
-<a href="#contato">Contato</a>
-</nav>
-
-<!-- JavaScript para ativar/desativar o menu -->
-<script>
-function toggleMenu() {
-  var menu = document.getElementById('menu');
-  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-}
-</script>
+  
 
 </script>
 </body>
