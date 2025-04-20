@@ -388,7 +388,13 @@ box-sizing: border-box;
       text-align: center;
     }
   }
-  </style>
+  
+@media (max-width: 768px) {
+  .hero {
+    background-image: url('banner responsivo.png') !important;
+  }
+}
+</style>
 </head>
 <body>
   <div class="hero">
@@ -397,8 +403,8 @@ box-sizing: border-box;
         <img src="logo5-removebg-preview.png" alt="Logo Clínica MS">
       </div>
       <!-- Banners -->
-<img src="banner.png" alt="Banner Desktop" class="banner-desktop">
-<img src="banner responsivo.png" alt="Banner Mobile" class="banner-mobile">
+
+
 
 <!-- Menu Hambúrguer -->
 <div class="menu-toggle" onclick="toggleMenu()">
