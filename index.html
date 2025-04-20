@@ -325,6 +325,24 @@ padding: 15px;
 box-sizing: border-box;
 }
 }
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: transparent;
+}
+
+.whatsapp-float img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img:hover {
+  transform: scale(1.1);
+}
+
   </style>
 
 <style>
@@ -416,6 +434,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
 </script>
 
 </head>
@@ -512,5 +531,8 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
 </script>
+<a href="https://wa.me/5517996016578?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20odontológica!" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+  <img src="btn-whats.png" alt="WhatsApp" />
+</a>
 </body>
 </html>
