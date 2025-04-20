@@ -30,13 +30,6 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      background-color: transparent;
-    }
     .logo {
       position: absolute;
       top: 0px;
@@ -127,7 +120,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    background: url('banner-mobile1.png') no-repeat center center;
+    background: url('banner-mobile.png') no-repeat center center;
     background-size: cover;
   }
 }
@@ -227,30 +220,58 @@
       line-height: 1.8;
     }
 
-    .tratamentos-lista {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
+    .tratamentos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
 
-  .tratamento-item {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 250px;
-      text-align: center;
-    }
+.tratamento-card {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 320px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  flex: 1 1 280px;
+}
 
-    .tratamento-item img {
-      width: 100%;
-      height: auto;
-      max-height: 250px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+.tratamento-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.tratamento-card h3 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.tratamento-card p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.btn-saiba-mais {
+  display: inline-block;
+  background-color: #ff7a00;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-saiba-mais:hover {
+  background-color: #e76a00;
+}
+
     footer {
       background: #111;
       color: #fff;
@@ -449,30 +470,32 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </section>
 
-  <section class="tratamentos" id="tratamentos">
-    <h2>Principais Tratamentos</h2>
-    <div class="tratamentos-lista">
-      <div class="tratamento-item">
-        <img src="Implante melq.png" alt="Implantes Dentários">
-        <h3>Implantes Dentários</h3>
-        <p>Recupere seu sorriso com segurança e conforto.</p>
-        <a href="implante.html" class="hero-btn">Saiba Mais</a>
-      </div>
-      <div class="tratamento-item">
-        <img src="clareamento-dental- teste.jpg" alt="Clareamento Dental">
-        <h3>Clareamento Dental</h3>
-        <p>Dentes branquinhos como a neve.</p>
-        <a href="clareamento.html" class="hero-btn">Saiba Mais</a>
-      </div>
-      <div class="tratamento-item">
-        <img src="Aparelho.jpeg" alt="Aparelho Ortodontico">
-        <h3>Ortodontia</h3>
-        <p>Estética dental com resultados naturais e duradouros.</p>
-        <a href="ortodontia.html" class="hero-btn">Saiba Mais</a>
-      </div>
+  <div class="titulo-quem-somos">
+    <h2><span class="sublinhado">TRATAMENTOS</span></h2>
+  </div>
+    <section id="principais-tratamentos" class="tratamentos-container">
+    <div class="tratamento-card">
+      <img src="implantes.png" alt="Antes e depois Implantes">
+      <h3>Implantes</h3>
+      <p>Sorria com mais segurança</p>
+      <a href="implantes.html" class="btn-saiba-mais">Saiba Mais</a>
+    </div>
+  
+    <div class="tratamento-card">
+      <img src="protese.png" alt="Antes e depois Clareamento">
+      <h3>Próteses</h3>
+      <p>Devolva o brilho ao seu sorriso</p>
+      <a href="clareamento.html" class="btn-saiba-mais">Saiba Mais</a>
+    </div>
+  
+    <div class="tratamento-card">
+      <img src="aparelho.png" alt="Antes e depois Aparelho">
+      <h3>Aparelhos Ortodônticos</h3>
+      <p>Alinhe seu sorriso com estilo</p>
+      <a href="aparelho.html" class="btn-saiba-mais">Saiba Mais</a>
     </div>
   </section>
-  </section>
+  
 
   <footer id="contato">
     <div class="footer-content">
