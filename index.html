@@ -359,6 +359,11 @@
       gap: 40px;
       justify-content: space-between;
     }
+    .header-wrapper {
+  background-color: transparent;
+  width: 100%;
+}
+
 
     /* Ajustes para telas pequenas */
 @media (max-width: 768px) {
@@ -457,13 +462,13 @@ box-sizing: border-box;
     display: none;
     flex-direction: column;
     background: #111;
-    padding: 10px 0;
     width: 100%;
+    padding: 10px 0;
+    position: static; /* ESSENCIAL: empurra conteúdo */
   }
 
   .nav-links.ativo {
     display: flex;
-    position: static;
   }
 
   .menu-hamburguer {
@@ -530,7 +535,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </head>
 <body>
-  <div class="hero">
+  <div class="header-wrapper">
     <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20🦷🗓" target="_blank" class="btn-primary">ENTRE EM CONTATO</a>
       <div class="menu-hamburguer">☰</div>
       <a href="index.html">
