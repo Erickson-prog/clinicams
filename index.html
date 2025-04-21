@@ -53,6 +53,25 @@
       font-weight: bold;
     }
 
+    .social-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: absolute;
+  top: 35px;
+  left: 60px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #ffc107;
+}
+
     .nav-links {
       position: absolute;
       top: 30px;
@@ -503,6 +522,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 <body>
@@ -529,11 +549,12 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="#estrutura">Estrutura</a>
       </div>
     </div>
-    <div class="hero-content">
-        <a class="btn-agendar hide-on-mobile" href="https://wa.me/17996016578" target="_blank">CONHEÇA A <BR> NOSSA ESTRUTURA</a>
+    <div class="social-icons">
+      <a href="https://facebook.com/seuPerfil" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/seuPerfil" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5517996016578" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
-  </div>
-
+    
   <div class="titulo-quem-somos">
     <h2><span class="sublinhado">QUEM SOMOS</span></h2>
   </div>
