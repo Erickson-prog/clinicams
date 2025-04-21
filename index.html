@@ -259,17 +259,17 @@
   color: #555;
 }
 
-
-    .tratamentos-container {
+.tratamentos-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
+  padding: 20px;
 }
 
-.tratamento-card {
-  background-color: #1a1a1a;
+.card {
+  background-color: #111;
+  color: white;
   border-radius: 12px;
   text-align: center;
   max-width: 320px;
@@ -278,11 +278,19 @@
   flex: 1 1 280px;
 }
 
-.tratamento-card img {
+.card img {
   width: 100%;
-  height: auto;
   border-radius: 10px;
-  margin-bottom: 1rem;
+}
+
+.card .btn {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 .tratamento-card h3 {
@@ -515,6 +523,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="#implantes">Implantes</a>
             <a href="#proteses">Próteses</a>
             <a href="#ortodontia">Ortodontia</a>
+            <a href="#gengivoplastia">Gengivolastia</a>
           </div>
         </div>
         <a href="#estrutura">Estrutura</a>
@@ -568,26 +577,33 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="titulo-quem-somos">
     <h2><span class="sublinhado">TRATAMENTOS</span></h2>
   </div>
-    <section id="principais-tratamentos" class="tratamentos-container">
-    <div class="tratamento-card">
-      <img src="implantes.png" alt="Antes e depois Implantes">
+  <section class="tratamentos-container">
+    <div class="card">
+      <img src="implantes.png" alt="Implantes">
       <h3>Implantes</h3>
       <p>Sorria com mais segurança</p>
-      <a href="implantes.html" class="btn-saiba-mais">Saiba Mais</a>
+      <a href="#implantes" class="btn">Saiba Mais</a>
     </div>
   
-    <div class="tratamento-card">
-      <img src="protese.png" alt="Antes e depois Clareamento">
+    <div class="card">
+      <img src="protese.png" alt="Próteses">
       <h3>Próteses</h3>
       <p>Devolva o brilho ao seu sorriso</p>
-      <a href="clareamento.html" class="btn-saiba-mais">Saiba Mais</a>
+      <a href="#protese" class="btn">Saiba Mais</a>
     </div>
   
-    <div class="tratamento-card">
-      <img src="aparelho.png" alt="Antes e depois Aparelho">
+    <div class="card">
+      <img src="aparelho.png" alt="Aparelhos Ortodônticos">
       <h3>Aparelhos Ortodônticos</h3>
       <p>Alinhe seu sorriso com estilo</p>
-      <a href="aparelho.html" class="btn-saiba-mais">Saiba Mais</a>
+      <a href="#aparelhos" class="btn">Saiba Mais</a>
+    </div>
+  
+    <div class="card">
+      <img src="gengivo.png" alt="Gengivoplastia">
+      <h3>Gengivoplastia</h3>
+      <p>Gengivas alinhadas, sorriso renovado.</p>
+      <a href="#gengivoplastia" class="btn">Saiba Mais</a>
     </div>
   </section>
   
