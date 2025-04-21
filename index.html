@@ -496,14 +496,21 @@ box-sizing: border-box;
   }
 
   .nav-close-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-close-btn {
+    display: block;
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 20px;
     font-size: 26px;
     color: white;
     cursor: pointer;
     z-index: 10002;
   }
+}
 
   .menu-overlay {
     display: none;
@@ -662,6 +669,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       
       <div class="nav-links">
+        <div class="nav-close-btn" onclick="fecharMenu()">×</div>
         <li style="list-style: none;">
           <a href="index.html">Início</a></li>
           <a href="#sobre">Sobre</a>
