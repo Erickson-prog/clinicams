@@ -459,17 +459,25 @@ box-sizing: border-box;
 
 <style>
 /* MOBILE ONLY */
+
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 250px;
+    background-color: #111;
     flex-direction: column;
-    background: #111;
-    width: 100%;
-    padding: 10px 0;
-    position: static; /* ESSENCIAL: empurra conteúdo */
+    padding-top: 80px;
+    transition: left 0.3s ease;
+    z-index: 10000;
+    display: flex;
   }
 
+
   .nav-links.ativo {
+    left: 0;
     display: flex;
   }
 
