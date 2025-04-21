@@ -456,18 +456,14 @@ box-sizing: border-box;
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 0;
     background: #111;
     padding: 10px 0;
     width: 100%;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    z-index: 10000;
   }
 
   .nav-links.ativo {
     display: flex;
+    position: static;
   }
 
   .menu-hamburguer {
