@@ -658,35 +658,48 @@ document.addEventListener("DOMContentLoaded", function () {
 </head>
 <body>
 
-<div class="menu-overlay" onclick="fecharMenu()"></div>
+<div class="menu-overlay"></div>
 
 <script>
-function fecharMenu() {
-  document.querySelector('.nav-links').classList.remove('ativo');
-  document.querySelector('.menu-overlay').classList.remove('active');
-}
-document.addEventListener("DOMContentLoaded", function () {
-  const btnMenu = document.querySelector('.menu-hamburguer');
-  const menu = document.querySelector('.nav-links');
-  const overlay = document.querySelector('.menu-overlay');
-  const dropdownBtns = document.querySelectorAll('.dropdown > a');
-
-  if (btnMenu) {
+  document.addEventListener("DOMContentLoaded", function () {
+    const btnMenu = document.querySelector('.menu-hamburguer');
+    const menu = document.querySelector('.nav-links');
+    const overlay = document.querySelector('.menu-overlay');
+    const btnFechar = document.querySelector('.nav-close-btn');
+    const dropdownBtns = document.querySelectorAll('.dropdown > a');
+  
+    // Abre o menu
     btnMenu.addEventListener('click', () => {
       menu.classList.add('ativo');
       overlay.classList.add('active');
     });
-  }
-
-  dropdownBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const dropdown = btn.parentElement;
-      dropdown.classList.toggle('open');
+  
+    // Fecha o menu ao clicar no botão X
+    btnFechar.addEventListener('click', () => {
+      menu.classList.remove('ativo');
+      overlay.classList.remove('active');
+    });
+  
+    // Fecha o menu apenas se clicar fora dele
+    overlay.addEventListener('click', (e) => {
+      const isClickInsideMenu = menu.contains(e.target);
+      if (!isClickInsideMenu) {
+        menu.classList.remove('ativo');
+        overlay.classList.remove('active');
+      }
+    });
+  
+    // Dropdown toggle
+    dropdownBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dropdown = btn.parentElement;
+        dropdown.classList.toggle('open');
+      });
     });
   });
-});
-</script>
+  </script>
+  
 
 <!-- TOPO COM LOGO E MENU (SEM BOTÃO) -->
 <div class="header-wrapper">
