@@ -54,26 +54,14 @@
 
     .logo {
   position: absolute;
-  top: 8px;
+  top: 3px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
     }
 
     .logo img {
-      height: 80px;
-    }
-
-    .btn-agendar {
-      position: absolute;
-      top: 20px;
-      left: 50px;
-      background-color: #f26522;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
+      height: 90px;
     }
 
     .social-icons {
@@ -157,7 +145,7 @@
     }
 
     .hero {
-  background: url("banner principal.png") no-repeat center center;
+  background: url("banner site.png") no-repeat center center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -189,11 +177,12 @@
   .btn-primary {
   background: #ff5e00;
   color: white;
-  padding: 7px 110px;
+  padding: 4px 50px;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
-  margin-top: 500px;
+  margin-top: -630px;
+  margin-right: 830px;
   display: inline-block;
   transition: background 0.3s ease;
   transform: translateX(-60px);
@@ -205,7 +194,7 @@
   }
 }
     .btn-saiba {
-      background: #ff7a00;
+      background: #ff5e00;
       color: #fff;
       padding: 12px 30px;
       border-radius: 30px;
@@ -238,7 +227,7 @@
 
     .sublinhado {
       text-decoration: underline;
-      text-decoration-color: #f26522;
+      text-decoration-color: #ff5e00;
       text-underline-offset: 6px;
     }
 
@@ -343,7 +332,7 @@
 }
 
 .card .btn {
-  background-color: orange;
+  background-color: #ff5e00;
   color: white;
   padding: 10px 20px;
   display: inline-block;
@@ -626,6 +615,62 @@ box-sizing: border-box;
   }
 }
 
+.zigzag {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+}
+
+.zigzag .item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 60px 0;
+  gap: 40px;
+  background-color: #f2f5f9;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.zigzag .imagem img {
+  max-width: 400px;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.zigzag .texto {
+  max-width: 500px;
+  color: #111;
+}
+
+.zigzag .btn {
+  background-color: #ff7a00;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.zigzag .btn:hover {
+  background-color: #e76a00;
+}
+
+.zigzag .item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .zigzag .item {
+    flex-direction: column !important;
+    text-align: center;
+  }
+}
+
 @media (min-width: 769px) {
   .menu-hamburguer {
     display: none;
@@ -775,7 +820,7 @@ box-sizing: border-box;
       </div>
     </div>
   </section>
-  <section id="equipe" style="background-color: #fff; padding: 60px 0;">
+  <section id="equipe" style="background-color: #f9f9f9; padding: 60px 0;">
     <div class="container" style="max-width: 1100px; margin: auto; text-align: center;">
       <div class="equipe-grid" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
         
@@ -805,33 +850,52 @@ box-sizing: border-box;
   <div class="titulo-quem-somos">
     <h2><span class="sublinhado">TRATAMENTOS</span></h2>
   </div>
-  <section class="tratamentos-container">
-    <div class="card">
-      <img src="implantes.png" alt="Implantes">
-      <h3>Implantes</h3>
-      <p>Sorria com mais segurança</p>
-      <a href="#implantes" class="btn">Saiba Mais</a>
+  <section class="zigzag" style="background-color: #1f1f1f; padding: 60px 20px;"> 
+    <div class="item">
+      <div class="imagem">
+        <img src="implantes.png" alt="Implantes">
+      </div>
+      <div class="texto">
+        <h3>Implantes</h3>
+        <p>Sorria com mais segurança</p>
+        <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20%F0%9F%A6%B7%F0%9F%97%93" class="btn">Agendar!</a>
+      </div>
     </div>
   
-    <div class="card">
-      <img src="protese.png" alt="Próteses">
-      <h3>Próteses</h3>
-      <p>Devolva o brilho ao seu sorriso</p>
-      <a href="#protese" class="btn">Saiba Mais</a>
+    <!-- Próteses -->
+    <div class="item">
+      <div class="imagem">
+        <img src="protese.png" alt="Próteses">
+      </div>
+      <div class="texto">
+        <h3>Próteses</h3>
+        <p>Devolva o brilho ao seu sorriso</p>
+        <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20%F0%9F%A6%B7%F0%9F%97%93" class="btn">Agendar!</a>
+      </div>
     </div>
   
-    <div class="card">
-      <img src="aparelho.png" alt="Aparelhos Ortodônticos">
-      <h3>Aparelhos Ortodônticos</h3>
-      <p>Alinhe seu sorriso com estilo</p>
-      <a href="#aparelhos" class="btn">Saiba Mais</a>
+    <!-- Aparelhos Ortodônticos -->
+    <div class="item">
+      <div class="imagem">
+        <img src="aparelho.png" alt="Aparelhos Ortodônticos">
+      </div>
+      <div class="texto">
+        <h3>Aparelhos Ortodônticos</h3>
+        <p>Alinhe seu sorriso com estilo</p>
+        <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20%F0%9F%A6%B7%F0%9F%97%93" class="btn">Agendar!</a>
+      </div>
     </div>
   
-    <div class="card">
-      <img src="gengivo.png" alt="Gengivoplastia">
-      <h3>Gengivoplastia</h3>
-      <p>Gengivas alinhadas, sorriso renovado.</p>
-      <a href="#gengivoplastia" class="btn">Saiba Mais</a>
+    <!-- Gengivoplastia -->
+    <div class="item">
+      <div class="imagem">
+        <img src="gengivo.png" alt="Gengivoplastia">
+      </div>
+      <div class="texto">
+        <h3>Gengivoplastia</h3>
+        <p>Gengivas alinhadas, sorriso renovado.</p>
+        <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20%F0%9F%A6%B7%F0%9F%97%93" class="btn">Agendar!</a>
+      </div>
     </div>
   </section>
   
