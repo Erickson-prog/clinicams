@@ -247,26 +247,32 @@
       color: #dcb208;
     }
 
-    .conteudo-sobre {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
+    @media (min-width: 769px) {
+  .conteudo-sobre {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .imagem-sobre {
-      max-width: 500px;
-      width: 100%;
-      border-radius: 20px;
-    }
+  .imagem-sobre {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
 
-    .texto-sobre {
-      flex: 1;
-      max-width: 600px;
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
+  .texto-sobre {
+    flex: 1;
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+  }
+}
+
     .equipe {
   padding: 40px 20px;
   background-color: #fff;
