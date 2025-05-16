@@ -166,29 +166,64 @@
     background: #111;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     padding: 10px 0;
     z-index: 9999;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    flex-wrap: wrap;
   }
 
-  .mobile-menu-bottom a {
+  .mobile-menu-bottom a,
+  .dropdown-label {
     color: white;
     text-decoration: none;
     font-size: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 5px;
   }
 
-  .mobile-menu-bottom a span {
+  .mobile-menu-bottom a span,
+  .dropdown-label span {
     font-size: 10px;
     margin-top: 2px;
   }
 
-  body {
-    padding-bottom: 70px; /* evita que o menu tape o conteúdo */
+  .dropdown {
+    position: relative;
   }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #222;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    flex-direction: column;
+  }
+
+  .dropdown-menu a {
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 0;
+    text-align: center;
+    display: block;
+  }
+
+  /* Mostra o dropdown ao clicar no label */
+  #dropdown-toggle:checked + .dropdown-label + .dropdown-menu {
+    display: flex;
+  }
+
+  body {
+    padding-bottom: 90px; /* espaço para o menu */
+  }
+}
 }
 
 @media (max-width: 768px) {
@@ -693,13 +728,29 @@ box-sizing: border-box;
 <body>
 
   <div class="mobile-menu-bottom">
+
     <a href="#inicio"><i class="fas fa-home"></i><span>Início</span></a>
     <a href="#sobre"><i class="fas fa-user"></i><span>Sobre</span></a>
-    <a href="#tratamentos"><i class="fas fa-tooth"></i><span>Trat.</span></a>
+  
+    <!-- DROPDOWN -->
+    <div class="dropdown">
+      <input type="checkbox" id="dropdown-toggle" hidden>
+      <label for="dropdown-toggle" class="dropdown-label">
+        <i class="fas fa-tooth"></i><span>Trat.</span>
+      </label>
+      <div class="dropdown-menu">
+        <a href="#implantes">Implantes</a>
+        <a href="#protese">Prótese</a>
+        <a href="#aparelhos">Aparelhos</a>
+        <a href="#gengiva">Gengivoplastia</a>
+      </div>
+    </div>
+  
     <a href="#estrutura"><i class="fas fa-building"></i><span>Estrutura</span></a>
     <a href="https://instagram.com/seuperfil" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="https://facebook.com/seuperfil" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20🦷🗓" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/5517996016578" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  
   </div>
   
 <script>
