@@ -161,6 +161,43 @@
   position: relative;
 }
 
+.mobile-menu-bottom {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+  }
+
+  .mobile-menu-bottom a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-menu-bottom a span {
+    font-size: 10px;
+    margin-top: 2px;
+  }
+
+  body {
+    padding-bottom: 70px; /* evita que o menu tape o conteúdo */
+  }
+}
 
 @media (max-width: 768px) {
   .hero {
@@ -366,27 +403,12 @@
       gap: 40px;
       justify-content: space-between;
     }
-    .header-wrapper {
-  position: relative;
-  width: 100%;
-  z-index: 10;
-}
-
 
     /* Ajustes para telas pequenas */
 @media (max-width: 768px) {
 /* Ajuste de logo ou topo */
 .logo {
   font-size: 1.2rem;
-}
-
-/* Menu hamburguer */
-nav {
-  display: none; /* Deixa o menu oculto no mobile */
-}
-
-.menu-hamburguer {
-  display: block; /* Adiciona o botão hamburguer */
 }
 
 /* Cards em coluna única */
@@ -569,17 +591,6 @@ box-sizing: border-box;
     display: flex;
   }
 
-  .menu-hamburguer {
-    display: block;
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
-    position: absolute;
-    left: 20px;
-    top: 25px;
-    z-index: 10001;
-  }
-
   .dropdown-content {
     position: static;
     background: #222;
@@ -680,42 +691,10 @@ box-sizing: border-box;
   }
 }
 
-@media (min-width: 769px) {
-  .menu-hamburguer {
-    display: none;
-  }
-}
 </style>
 <script>
-  function fecharMenu() {
-    document.querySelector('.nav-links').classList.remove('ativo');
-    document.querySelector('.menu-overlay').classList.remove('active');
-  }
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const btnMenu = document.querySelector('.menu-hamburguer');
-    const menu = document.querySelector('.nav-links');
-    const overlay = document.querySelector('.menu-overlay');
-    const btnFechar = document.querySelector('.nav-close-btn');
-  
-    // Abre o menu
-    btnMenu.addEventListener('click', () => {
-      menu.classList.add('ativo');
-      overlay.classList.add('active');
-    });
-  
-    // Fecha ao clicar no "X"
-    btnFechar.addEventListener('click', fecharMenu);
-  
-    // Fecha ao clicar fora do menu (mas não dentro dele)
-    overlay.addEventListener('click', function (e) {
-      const dentroDoMenu = menu.contains(e.target);
-      if (!dentroDoMenu) {
-        fecharMenu();
-      }
-    });
-  });
-  </script>
+
+</script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="icon" type="image/png" href="favicon.png">
@@ -723,59 +702,25 @@ box-sizing: border-box;
 </head>
 <body>
 
-<div class="menu-overlay"></div>
-
+  <div class="mobile-menu-bottom">
+    <a href="#inicio"><i class="fas fa-home"></i><span>Início</span></a>
+    <a href="#sobre"><i class="fas fa-user"></i><span>Sobre</span></a>
+    <a href="#tratamentos"><i class="fas fa-tooth"></i><span>Trat.</span></a>
+    <a href="#estrutura"><i class="fas fa-building"></i><span>Estrutura</span></a>
+    <a href="https://instagram.com/seuperfil" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/seuperfil" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://wa.me/5517996016578" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const btnMenu = document.querySelector('.menu-hamburguer');
-    const menu = document.querySelector('.nav-links');
-    const overlay = document.querySelector('.menu-overlay');
-    const btnFechar = document.querySelector('.nav-close-btn');
-    const dropdownBtns = document.querySelectorAll('.dropdown > a');
-  
-    // Abre o menu
-    btnMenu.addEventListener('click', () => {
-      menu.classList.add('ativo');
-      overlay.classList.add('active');
-    });
-  
-    // Fecha o menu ao clicar no botão X
-    btnFechar.addEventListener('click', () => {
-      menu.classList.remove('ativo');
-      overlay.classList.remove('active');
-    });
-  
-    // Fecha o menu apenas se clicar fora dele
-    overlay.addEventListener('click', (e) => {
-      const isClickInsideMenu = menu.contains(e.target);
-      if (!isClickInsideMenu) {
-        menu.classList.remove('ativo');
-        overlay.classList.remove('active');
-      }
-    });
-  
-    // Dropdown toggle
-    dropdownBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const dropdown = btn.parentElement;
-        dropdown.classList.toggle('open');
-      });
-    });
-  });
-  </script>
-  
 
-<!-- TOPO COM LOGO E MENU (SEM BOTÃO) -->
-<div class="header-wrapper">
-  <div class="menu-hamburguer">☰</div>
+</script>
 
   <a href="index.html" class="logo">
     <img src="logo5-removebg-preview.png" alt="Logo Clínica MS">
   </a>
 
   <div class="nav-links">
-    <div class="nav-close-btn" onclick="fecharMenu()">×</div>
     <li style="list-style: none;"><a href="index.html">Início</a></li>
     <a href="#sobre">Sobre</a>
     <div class="dropdown">
