@@ -210,19 +210,20 @@
     }
 
     section.sobre, section.tratamentos {
-      padding: 80px 20px;
-      max-width: 1200px;
+      padding: 20px 20px;
+      max-width: 600px;
       margin: auto;
     }
 
     .titulo-quem-somos {
       text-align: center;
-      margin-top: 60px;
+      margin-top: 80px;
     }
 
     .titulo-quem-somos h2 {
       font-size: 2.5rem;
       font-weight: bold;
+      margin-bottom: 120px;
     }
 
     .sublinhado {
@@ -247,6 +248,78 @@
       color: #dcb208;
     }
 
+    .secao-sobre {
+  padding: 100px; /* mais espaço no topo */
+}
+
+    .secao-sobre .perfil {
+      display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; /* isso centraliza verticalmente */
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 300px; /* ajuda a manter altura proporcional */
+  flex-direction: row-reverse; /* <-- isso inverte imagem e texto */
+}
+
+.secao-sobre .foto {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+  padding-right: 140px;
+}
+
+.secao-sobre .foto img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.secao-sobre .foto h3 {
+  margin-top: 10px;
+}
+
+.secao-sobre .foto a {
+  font-size: 26px;
+  color: #E1306C;
+  text-decoration: none;
+}
+
+.secao-sobre .descricao {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 80px;
+  font-size: 22px;
+  line-height: 1.8;
+  color: #444;
+  text-align: justify;
+  padding-top: 0px;
+}
+
+.secao-sobre .descricao h2 {
+  color: #222;
+  margin-bottom: 15px;
+}
+
+/* Mobile responsivo */
+@media (max-width: 768px) {
+  .secao-sobre .perfil {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .secao-sobre .descricao {
+    text-align: justify;
+    padding: 0 20px;
+  }
+}
     .conteudo-sobre {
       display: flex;
       gap: 40px;
@@ -256,7 +329,7 @@
     }
 
     .imagem-sobre {
-      max-width: 500px;
+      max-width: 600px;
       width: 100%;
       border-radius: 20px;
     }
@@ -266,53 +339,11 @@
       max-width: 600px;
       font-size: 1.1rem;
       line-height: 1.8;
+      text-align: justify;
     }
     .equipe {
   padding: 40px 20px;
   background-color: #fff;
-}
-
-.container-equipe {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
-
-
-.membro {
-  max-width: 300px;
-  text-align: center;
-}
-
-.membro img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.info {
-  margin-top: 15px;
-}
-
-.info h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
-  color: #333;
-}
-
-.info p {
-  margin: 2px 0;
-  font-size: 14px;
-  color: #555;
-}
-
-.tratamentos-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
 }
 
 .card {
@@ -326,33 +357,6 @@
   flex: 1 1 280px;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.card .btn {
-  background-color: #ff5e00;
-  color: white;
-  padding: 10px 20px;
-  display: inline-block;
-  margin-top: 10px;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.tratamento-card h3 {
-  font-size: 1.4rem;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.tratamento-card p {
-  font-size: 1rem;
-  color: #ccc;
-  margin-bottom: 1rem;
-}
-
 .btn-saiba-mais {
   display: inline-block;
   background-color: #ff7a00;
@@ -364,12 +368,8 @@
   transition: background 0.3s ease;
 }
 
-.btn-saiba-mais:hover {
-  background-color: #e76a00;
-}
-
     footer {
-      background: #111;
+      background: #1f1f1f;
       color: #fff;
       padding: 40px 20px;
     }
@@ -619,6 +619,29 @@ box-sizing: border-box;
   background-color: #f9f9f9;
   padding: 60px 20px;
 }
+.zigzag .item:nth-child(odd) {
+  background-color: #1f1f1f; /*fundo preto */
+  color: #dcb208;
+}
+
+.zigzag .item:nth-child(even) {
+  background-color: #fff;  /* fundo branco */
+  color: #111;
+}
+.zigzag .item .btn {
+  background-color: #ff7a00;
+  color: white;
+}
+
+.zigzag .item:nth-child(odd) .btn {
+  background-color: #ff7a00;
+  color: #fff;
+  font-weight: bold;
+}
+
+.zigzag .item:nth-child(odd) a {
+  color: #fff; /* mantém links legíveis */
+}
 
 .zigzag .item {
   display: flex;
@@ -642,18 +665,18 @@ box-sizing: border-box;
 
 .zigzag .texto {
   max-width: 500px;
-  color: #111;
+  text-align: justify;
 }
 
 .zigzag .btn {
   background-color: #ff7a00;
-  padding: 10px 20px;
+  padding: 15px 100px;
   color: white;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 150px;
 }
 
 .zigzag .btn:hover {
@@ -820,29 +843,21 @@ box-sizing: border-box;
       </div>
     </div>
   </section>
-  <section id="equipe" style="background-color: #f9f9f9; padding: 60px 0;">
-    <div class="container" style="max-width: 1100px; margin: auto; text-align: center;">
-      <div class="equipe-grid" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
-        
-        <!-- Dr. Melquisedeque -->
-        <section id="sobre" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 50px 20px; background-color: #fdfdfd;">
-          <div style="flex: 1; min-width: 300px; text-align: center;">
-            <img src="quem-melquisedeque.jpg" alt="Dr. Melquisedeque" style="max-width: 300px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-            <h3 style="margin-top: 10px;">Dr. Melquisedeque</h3>
-            <a href="https://www.instagram.com/dr.melquisalicio/?igsh=MWR2dW9tdzhubmg1aw%3D%3D#" target="_blank" style="font-size: 26px; color: #E1306C;">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-          <div style="flex: 1; min-width: 300px; padding: 20px;">
-            <h2 style="color: #222;">Cirurgião-Dentista - CRO-SP 124.529</h2>
-            <p style="font-size: 16px; line-height: 1.6; color: #444;">
-                           <br>   
-          <p>Possui graduação em Odontologia pelo Centro Universitário de Rio Preto - UNIRP (2017):<br>
-            Pós-Graduação em Implantodontia pelo IBEO - Rio Preto (2020)
-            Pós-Graduação em Ortodontia pela Ortopós Catanduva (2022):<br>
-            Atua em consultório particular, trabalhando com implantes dentários de última geração e aparelhos ortodônticos, com ênfase em autoligados.</p>
-                </div>
-  
+  <section id="sobre" class="secao-sobre">
+    <div class="perfil">
+      <div class="foto">
+        <img src="quem-melquisedeque.jpg" alt="Dr. Melquisedeque">
+        <h3>Dr. Melquisedeque</h3>
+        <a href="https://www.instagram.com/dr.melquisalicio/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <div class="descricao">
+        <h2>Cirurgião-Dentista - CRO-SP 124.529</h2>
+        <p><li>Possui graduação em Odontologia pelo Centro Universitário de Rio Preto - UNIRP (2017).<br>
+          <li>Pós-Graduação em Implantodontia pelo IBEO - Rio Preto (2020).<br>
+          <li>Pós-Graduação em Ortodontia pela Ortopós Catanduva (2022).<br>
+          <li>Atua em consultório particular, trabalhando com implantes dentários de última geração e aparelhos ortodônticos, com ênfase em autoligados.</p> </li>
       </div>
     </div>
   </section>
@@ -850,14 +865,14 @@ box-sizing: border-box;
   <div class="titulo-quem-somos">
     <h2><span class="sublinhado">TRATAMENTOS</span></h2>
   </div>
-  <section class="zigzag" style="background-color: #1f1f1f; padding: 60px 20px;"> 
+  <section class="zigzag" style="background-color: #111; padding: 60px 20px;"> 
     <div class="item">
       <div class="imagem">
         <img src="implantes.png" alt="Implantes">
       </div>
       <div class="texto">
         <h3>Implantes</h3>
-        <p>Sorria com mais segurança</p>
+        <p>Implante dentário substitui a raiz de um ou mais dentes perdidos, sendo sobre o pino é colocada uma ou mais coroas (prótese) imitando um dente natural, no quesito função e estética.</p>
         <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20%F0%9F%A6%B7%F0%9F%97%93" class="btn">Agendar!</a>
       </div>
     </div>
@@ -869,7 +884,7 @@ box-sizing: border-box;
       </div>
       <div class="texto">
         <h3>Próteses</h3>
-        <p>Devolva o brilho ao seu sorriso</p>
+        <p>A prótese é usada para substituir dentes ausentes, restabelecendo a função mastigatória, fonética e estética do sorriso. Pode ser total removível, parcial removível, parcial fixa e prótese sobre implante.</p>
         <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20%F0%9F%A6%B7%F0%9F%97%93" class="btn">Agendar!</a>
       </div>
     </div>
@@ -881,7 +896,7 @@ box-sizing: border-box;
       </div>
       <div class="texto">
         <h3>Aparelhos Ortodônticos</h3>
-        <p>Alinhe seu sorriso com estilo</p>
+        <p>Ortodontia estuda, previne e corrige o posicionamento dos dentes, proporcionando uma mordida funcional e uma estética harmoniosa, favorecendo a melhora na mastigação, fala, respiração e beleza do sorriso. <br> </p>
         <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20%F0%9F%A6%B7%F0%9F%97%93" class="btn">Agendar!</a>
       </div>
     </div>
@@ -893,7 +908,7 @@ box-sizing: border-box;
       </div>
       <div class="texto">
         <h3>Gengivoplastia</h3>
-        <p>Gengivas alinhadas, sorriso renovado.</p>
+        <p>A gengivectomia é um procedimento com objetivo de remoção de parte do tecido gengival para correção com fins estético e terapêutico, facilitando a higienização, redução do acúmulo de placa e melhora da estética do sorriso.</p>
         <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20%F0%9F%A6%B7%F0%9F%97%93" class="btn">Agendar!</a>
       </div>
     </div>
