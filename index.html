@@ -403,6 +403,30 @@
       line-height: 1.8;
       text-align: justify;
     }
+        .formaçao-sobre {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .formaçao-imagem-sobre {
+      max-width: 600px;
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    .formaçao-texto-sobre {
+      flex: 1 1 300px;
+      max-width: 600px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
     @media (max-width: 768px) {
   .secao-sobre .perfil {
     flex-direction: column !important;
@@ -752,8 +776,32 @@ box-sizing: border-box;
     text-align: center;
   }
 }
+.estrutura-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+}
 
-</style>
+.estrutura-foto {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.estrutura-texto {
+  margin-top: 20px;
+}
+
+.estrutura-texto h2 {
+  font-size: 2rem;
+  color: #222;
+}
+
+.estrutura-texto p {
+  font-size: 1.1rem;
+  color: #555;
+}</style>
 <script>
 
 </script>
@@ -856,7 +904,7 @@ box-sizing: border-box;
     </div>
   </section>
   <section id="sobre" class="secao-sobre">
-    <div class="conteudo-sobre" style="flex-direction: row-reverse;">
+    <div class="formaçao-sobre" style="flex-direction: row-reverse;">
       <div class="foto">
         <img src="quem-melquisedeque.jpg" alt="Dr. Melquisedeque" class="imagem-sobre">
         <h2>Dr. Melquisedeque Salício</h2>
@@ -864,7 +912,7 @@ box-sizing: border-box;
           <i class="fab fa-instagram"></i>
         </a>
       </div>
-      <div class="descricao" style="font-size: 26px;">
+      <div class="descricao" style="font-size: 23px;">
         <p>
           <li>Possui graduação em Odontologia pelo Centro Universitário de Rio Preto - UNIRP (2017).<br>
           <li>Pós-Graduação em Implantodontia pelo IBEO - Rio Preto (2020).<br>
@@ -925,35 +973,43 @@ box-sizing: border-box;
       </div>
     </div>
 
+            <div id="limpeza" class="item">
+      <div class="imagem">
+        <img src="limpeza.png" alt="limpeza">
+      </div>
+      <div class="texto">
+        <h3>Limpeza</h3>
+        <p>A limpeza dental é um procedimento realizado para remover a placa bacteriana e o tártaro que a escovação comum não consegue tirar. Ela ajuda a prevenir cáries, gengivite e mau hálito, deixando os dentes mais saudáveis e o sorriso mais bonito. É rápida e segura.</p>
+        <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20%F0%9F%A6%B7%F0%9F%97%93" class="btn">Agendar</a>      
+      </div>
+    </div>
+
     <div id="clareamento" class="item">
       <div class="imagem">
         <img src="clareamento.png" alt="clareamento">
       </div>
       <div class="texto">
         <h3>Clareamento Dental</h3>
-        <p>Deixe seu sorriso branquinho como a neve.</p>
+        <p>O clareamento dental é um procedimento estético que utiliza agentes clareadores para remover manchas e pigmentações dos dentes, deixando o sorriso mais branco e brilhante. O tratamento é seguro e não desgasta os dentes. 
+</p>
         <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20%F0%9F%A6%B7%F0%9F%97%93" class="btn">Agendar</a>
       </div>
     </div>
-
-        <div id="limpeza" class="item">
-      <div class="imagem">
-        <img src="limpeza.png" alt="limpeza">
-      </div>
-      <div class="texto">
-        <h3>Limpeza</h3>
-        <p>Deixe seu sorriso limpo.</p>
-        <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20%F0%9F%A6%B7%F0%9F%97%93" class="btn">Agendar</a>      
-      </div>
-    </div>
-
-<section id="estrutura" style="background-color: #fff; padding: 1px ; text-align: center;">
-  <div id="estrutura";
-  class="titulo-quem-somos">
-    <h2><span class="sublinhado">ESTRUTURA</span></h2>
 </section>
 
-  <footer id="contato">
+ <div id="estrutura";
+  class="titulo-quem-somos">
+    <h2><span class="sublinhado">ESTRUTURA</span></h2>
+  </div>
+<section class="estrutura">
+  <div class="estrutura-container">
+    <img src="Foto consultorio 1.png" alt="Consultório MS" class="estrutura-foto">
+    <div class="estrutura-texto">
+      <h2>Nosso Espaço</h2>
+      <p>Conforto, tecnologia e acolhimento em cada detalhe do nosso ambiente.</p>
+    </div>
+  </div>
+</section>  <footer id="contato">
     <div class="footer-content">
       <div class="contato">
         <h3>Contato</h3>
