@@ -640,6 +640,52 @@ box-sizing: border-box;
   }
 }
 
+.rodape {
+  background-color: #111;
+  color: #fff;
+  padding: 50px 20px 20px;
+  font-size: 0.95rem;
+}
+
+.rodape-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+}
+
+.rodape-coluna {
+  flex: 1;
+  min-width: 250px;
+}
+
+.rodape-coluna h4 {
+  color: #ff7a00;
+  margin-bottom: 10px;
+}
+
+.rodape-social a {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.rodape-social a:hover {
+  color: #ff7a00;
+}
+
+.rodape-direitos {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #444;
+  margin-top: 30px;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
 </style>
 
 <style>
@@ -1013,20 +1059,38 @@ box-sizing: border-box;
       <p>Conforto, tecnologia e acolhimento em cada detalhe do nosso ambiente.</p>
     </div>
   </div>
-</section>  <footer id="contato">
-    <div class="footer-content">
-      <div class="contato">
-        <h3>Contato</h3>
-        <p>Telefone: (17) 99601-6578</p>
-        <p>Email: contato@clinicams.com.br</p>
+</section>  
+<footer class="rodape">
+  <div class="rodape-container">
+    <div class="rodape-coluna">
+      <h4>MS Odontologia Especializada</h4>
+      <p>Reabilitação oral com carinho, tecnologia e propósito.</p>
+    </div>
+
+    <div class="rodape-coluna">
+      <h4>Contato</h4>
+      <p>📍  Rua: Antônio Olímpio, 552 - Beneficiencia, Olímpia - SP</p>
+      <p>📞 (17) 99601-6578</p>
+      <p>📧 @msodontologia.com</p>
+    </div>
+
+    <div class="rodape-coluna">
+      <h4>Redes Sociais</h4>
+      <div class="rodape-social">
+        <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20🦷🗓" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/dr.melquisalicio?igsh=MWR2dW9tdzhubmg1aw==" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/16WTryi2CS/" target="_blank"><i class="fab fa-facebook-f"></i></a>
       </div>
+    </div>
+  </div>
       <div class="mapa">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.260923374589!2d-48.91777662497685!3d-20.740215880837905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bc6e671eb5389b%3A0x1890f3338ba235ba!2zQXNzb2NpYcOnw6NvIGRlIFNvY29ycm9zIE3DunR1b3MgZGUgT2zDrW1waWE!5e0!3m2!1spt-BR!2sbr!4v1745007473332!5m2!1spt-BR!2sbr" width="100%" height="200" style="border:0;" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
+  <div class="rodape-direitos">
+    <p>&copy; 2025 MS Odontologia - Todos os direitos reservados</p>
+  </div>
   </footer>
-  
-
 </script>
 <a href="https://wa.me/5517996016578?text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20agendar%20minha%20avaliação%20odontológica.%20🦷🗓" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
   <img src="btn-whats.png" alt="WhatsApp" />
