@@ -293,7 +293,7 @@
       text-underline-offset: 6px;
     }
 
-    .secao-quem-somos {
+    .secao-quem-somos /*fundo preto*/ {
       padding: 100px 20px 60px;
       margin: 100px auto 0;
       background-color: #1f1f1f;
@@ -301,55 +301,43 @@
       width: 100%;
     }
 
-    .secao-quem-somos h2 {
-      color: white;
-    }
-
     .secao-quem-somos p {
       color: #dcb208;
     }
 
-    .secao-sobre {
+    .secao-sobre /*fundo branco*/ {
   padding: 70px; /* mais espaço no topo */
+  background-color: #f1efef;
 }
 
-    .secao-sobre .perfil {
-      display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center; /* isso centraliza verticalmente */
-  gap: 40px;
-  max-width: 1200px;
-  margin: auto;
-  min-height: 800px; /* ajuda a manter altura proporcional */
-  flex-direction: row-reverse; /* <-- isso inverte imagem e texto */
-}
 
-.secao-sobre .foto {
+.secao-sobre .foto /*nome melq fundo branco*/ {
   flex: 1;
-  min-width: 300px;
   text-align: center;
   padding-right: 140px;
 }
 
-.secao-sobre .foto img {
-  max-width: 600px;
+.secao-sobre .foto img /*insta */ {
+  max-width: 450px;
   width: 100%;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.secao-sobre .foto h3 {
-  margin-top: 10px;
-}
-
-.secao-sobre .foto a {
+.secao-sobre .foto a /*insta fundo branco */ {
   font-size: 26px;
   color: #E1306C;
   text-decoration: none;
 }
 
-.secao-sobre .descricao {
+   .formaçao-sobre /*formato fundo branco */{
+     display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+.secao-sobre .descricao /*texto fundo branco */ {
   flex: 1;
   min-width: 300px;
   display: flex;
@@ -357,17 +345,22 @@
   justify-content: center;
   height: 100%;
   padding: 80px;
-  font-size: 22px;
-  line-height: 2;
+  font-size: 1.1rem;
+  line-height: 1.8;
   color: #000000;
   text-align: justify;
-  padding-bottom: 0%;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 40px;
-  margin-bottom: 200px;
 }
 
+ .texto-sobre /* texto do fundo preto */ {
+      flex: 1;
+      max-width: 600px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
 .secao-sobre .descricao h2 {
   color: #222;
   margin-bottom: 15px;
@@ -385,51 +378,29 @@
     padding: 0 20px;
   }
 }
-    .conteudo-sobre {
+    .conteudo-sobre /*formato do texto fundo preto */ {
       display: flex;
       gap: 40px;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
+      
     }
 
-    .imagem-sobre {
+    .imagem-sobre /*imagem do fundo preto */ {
       max-width: 600px;
       width: 100%;
       border-radius: 20px;
     }
 
-    .texto-sobre {
+    .texto-sobre /* texto do fundo preto */ {
       flex: 1;
       max-width: 600px;
       font-size: 1.1rem;
       line-height: 1.8;
       text-align: justify;
     }
-        .formaçao-sobre {
-      display: flex;
-      gap: 2rem;
-      padding: 2rem;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .formaçao-imagem-sobre {
-      max-width: 600px;
-      width: 100%;
-      border-radius: 20px;
-      object-fit: cover;
-    }
-
-    .formaçao-texto-sobre {
-      flex: 1 1 300px;
-      max-width: 600px;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      text-align: justify;
-    }
-
+     
     @media (max-width: 768px) {
   .secao-sobre .perfil {
     flex-direction: column !important;
@@ -842,7 +813,7 @@ box-sizing: border-box;
   }
 }
 .estrutura-container {
-  max-width: 1200px;
+  max-width: 600px;
   margin: auto;
   padding: 60px 20px;
   text-align: center;
